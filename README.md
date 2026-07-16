@@ -1,15 +1,228 @@
-# minikube_kubernetes_project
-this project is documenting the process of setting up kubernetes environment on local machine.
+# Kubernetes Local Setup using Minikube + Docker
 
-**Setting up minikube**
-1- Downloading and installing virtual box
-2- Downloading and installing minikube
-3- Adding minikube to PATH environmental variable, run powershell as Admin and run below-
+This repository contains my local Kubernetes learning environment using **Minikube** with the **Docker driver** on Windows 11.
 
-$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine) if ($oldPath.Split(';') -inotcontains 'C:\minikube'){
-  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine)
-}
+---
 
-4- Start your cluster
+## 📋 Prerequisites
 
-minikube start
+- Docker Desktop
+- Minikube
+- kubectl
+- Windows PowerShell
+
+---
+
+## 🚀 Verify Installation
+
+### Check Docker
+
+```powershell
+docker version
+docker info
+docker ps
+```
+
+### Check Minikube
+
+```powershell
+minikube version
+```
+
+### Check kubectl
+
+```powershell
+kubectl version --client
+```
+
+---
+
+## ▶️ Start Minikube
+
+```powershell
+minikube start --driver=docker
+```
+
+---
+
+## ✅ Verify Cluster
+
+```powershell
+minikube status
+```
+
+Expected Output
+
+```text
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+```
+
+Check Kubernetes Nodes
+
+```powershell
+kubectl get nodes
+```
+
+Expected Output
+
+```text
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   2m    v1.xx.x
+```
+
+---
+
+## 📦 Useful Commands
+
+Start Cluster
+
+```powershell
+minikube start --driver=docker
+```
+
+Stop Cluster
+
+```powershell
+minikube stop
+```
+
+Delete Cluster
+
+```powershell
+minikube delete
+```
+
+Check Cluster Status
+
+```powershell
+minikube status
+```
+
+Open Kubernetes Dashboard
+
+```powershell
+minikube dashboard
+```
+
+SSH into Minikube
+
+```powershell
+minikube ssh
+```
+
+---
+
+# Troubleshooting
+
+## Issue 1
+
+### Error
+
+```text
+Profile "minikube" not found.
+```
+
+### Cause
+
+No Minikube cluster has been created.
+
+### Solution
+
+```powershell
+minikube start --driver=docker
+```
+
+---
+
+## Issue 2
+
+### Error
+
+```text
+Unable to connect to the server:
+dial tcp [::1]:8080
+```
+
+### Cause
+
+The Kubernetes API Server is not running because Minikube has not started.
+
+### Solution
+
+```powershell
+minikube start --driver=docker
+```
+
+Verify
+
+```powershell
+kubectl get nodes
+```
+
+---
+
+## Issue 3
+
+### Error
+
+```text
+failed to connect to the docker API...
+```
+
+### Cause
+
+Docker Desktop is not running or Docker Engine is unavailable.
+
+### Solution
+
+1. Start Docker Desktop.
+2. Wait until Engine Running is displayed.
+3. Retry:
+
+```powershell
+docker ps
+```
+
+---
+
+## Issue 4
+
+### Error
+
+```text
+GUEST_DRIVER_MISMATCH
+The existing "minikube" cluster was created using the "virtualbox" driver.
+```
+
+### Cause
+
+An old Minikube cluster was created using VirtualBox, but Docker is now being used as the driver.
+
+### Solution
+
+Delete the old cluster and recreate it using Docker.
+
+```powershell
+minikube delete
+```
+
+```powershell
+minikube start --driver=docker
+```
+
+---
+
+## 📚 References
+
+- https://minikube.sigs.k8s.io/docs/
+- https://kubernetes.io/docs/
+- https://kubernetes.io/docs/tasks/tools/
+
+---
+
+## 👩‍💻 Author
+
+**Shikha Singh**
