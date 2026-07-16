@@ -1,4 +1,4 @@
-# Project 02: Deploy MongoDB and Mongo Express on Kubernetes
+# Project 01: Deploy MongoDB and Mongo Express on Kubernetes
 
 ## Project Overview
 
