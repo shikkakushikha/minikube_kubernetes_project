@@ -9,7 +9,7 @@
 
 4. install/create pod (refer k8s documentation for YAML file: https://kubernetes.io/docs/concepts/workloads/pods/)
 
-<img width="411" height="356" alt="image" src="https://github.com/user-attachments/assets/0e305790-9e51-4d65-b11e-cdbcc230478c" 
+<img width="411" height="356" alt="image" src="https://github.com/user-attachments/assets/a0337593-51cd-4a7e-88ff-e11e2b224038" />
 
 <img width="593" height="323" alt="image" src="https://github.com/user-attachments/assets/56456b94-8385-4291-80e1-eb26a2a25880" />
 
