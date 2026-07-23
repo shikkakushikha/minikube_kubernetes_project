@@ -27,3 +27,6 @@
 
 
 NOTE: kubectl Quick Reference : https://kubernetes.io/docs/reference/kubectl/quick-reference/
+
+kubectl apply -f pod.yaml → Creates the resource if it doesn't exist, and updates it if it does.
+kubectl create -f pod.yaml → Creates the resource only once. It will fail if the resource already exists.
