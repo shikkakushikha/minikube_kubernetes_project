@@ -1,11 +1,13 @@
 1. install kubectl (refer kubectl documentation)
 2. install local cluster (minikube, kind, k3s, *kind is better*)
 3. create a cluster 
+```poweshell
    minikube start
+```
    minikube will create VM first then create a single node K8s cluster 
    for that you need hypervisor as well, install that --driver
 
 4. install/create pod (refer k8s documentation for YAML file: https://kubernetes.io/docs/concepts/workloads/pods/)
 
 
-kubectl Quick Reference : https://kubernetes.io/docs/reference/kubectl/quick-reference/
+NOTE: kubectl Quick Reference : https://kubernetes.io/docs/reference/kubectl/quick-reference/
