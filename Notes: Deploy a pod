@@ -1,6 +1,5 @@
 1. install kubectl (refer kubectl documentation)
 2. install local cluster (minikube, kind, k3s, *kind is better*)
 3. create a cluster 
-```bash
-minicube start
+```minicube start
 ```
