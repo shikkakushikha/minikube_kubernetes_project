@@ -1,7 +1,7 @@
 1. install kubectl (refer kubectl documentation)
 2. install local cluster (minikube, kind, k3s, *kind is better*)
 3. create a cluster 
-```poweshell
+```powershell
    minikube start
 ```
    minikube will create VM first then create a single node K8s cluster 
