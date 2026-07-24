@@ -15,7 +15,7 @@ This repository contains my local Kubernetes learning environment using **Miniku
 
 ## 🚀 Verify Installation
 
-### Check Docker
+### install/Check Docker (WSL-ubuntu)
 
 Steps <br>
 Install/Open Docker Desktop. <br>
@@ -31,15 +31,18 @@ docker info
 docker ps
 ```
 
-### Check Minikube
+### Install/ Check Minikube (WSL-ubuntu)
 
 ```powershell
+curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
 minikube version
 ```
 
-### Check kubectl
+### install/Check kubectl (WSL-ubuntu)
 
 ```powershell
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 kubectl version --client
 ```
 
