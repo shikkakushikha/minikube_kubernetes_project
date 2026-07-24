@@ -17,13 +17,13 @@ This repository contains my local Kubernetes learning environment using **Miniku
 
 ### Check Docker
 
-Steps
-Install/Open Docker Desktop.
-Go to Settings → Resources → WSL Integration.
-Enable:
-✅ Enable integration with my default WSL distro
-✅ Ubuntu
-Click Apply & Restart.
+Steps <br>
+Install/Open Docker Desktop. <br>
+Go to Settings → Resources → WSL Integration. <br>
+Enable: <br>
+✅ Enable integration with my default WSL distro <br>
+✅ Ubuntu <br>
+Click Apply & Restart. <br>
 
 ```powershell
 docker version
